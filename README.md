@@ -8,7 +8,7 @@
 
 ## Description
 
-_This easy game is all about keeping our employees motivated to make phone calls and sell, sell, sell! Depending of the prospects of the call, the player gets to earn a certain number of points. Every 60 points, the player earns a special compensation from the boss. This application allows the player to log his or her score, AND to keep track the types of call he or she has been making. Happy sales! _
+_This easy game is all about keeping our employees motivated to make phone calls and sell, sell, sell! Depending of the prospects of the call, the player gets to earn a certain number of points. Every 60 points, the player earns a special compensation from the boss. This application allows the player to log his or her score, AND to keep track the types of call he or she has been making. Happy sales!_
 
 ## Setup/Installation Requirements
 
