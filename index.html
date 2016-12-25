@@ -1,0 +1,314 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        <title>
+        Cold Call Game
+        </title>
+        <link rel="stylesheet" type="text/css" href="bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta name="viewport" content="width=devide-width, initial-scale=1.0">
+        <style>
+        body {
+          background-size: 100%;
+        }
+        </style>
+    </head>
+
+
+    <body background= "jefedavid.jpg">
+            <h1><center>Cold Call: The Greatest Game of All Time Ever!</center></h1>
+            <hr>
+                <center><h2> Score: <div id="score"></div></h2></center>
+            <table style="width:100%">
+              <tr>
+                <td><button type="button" class="btn btn-success" onclick="previously()">Check Score</button></td>
+
+                <td><button type="button" class="btn btn-success" onclick="enter()">Enter Score</button></td>
+
+                <td><button type="button" class="btn btn-success" onclick="reset()">Reset Score</button></td>
+              </tr>
+            </table>
+            <hr>
+
+
+            <br>
+            <div>
+                <p>
+          &nbsp;<button type = "button" class = "btn btn-primary btn-lg" onclick="myFunction1()">
+                Call with no answer
+                </button>
+                <span id="numbercalls1"></span>
+                </p>
+
+                <p>
+          &nbsp;<button type = "button" class = "btn btn-primary btn-lg" onclick="myFunction2()">
+                Conversation, but no email address
+                </button>
+                <span id="numbercalls2"></span>
+                </p>
+
+          &nbsp;<button type = "button" class = "btn btn-primary btn-lg" onclick="myFunction3()">
+                Conversation AND email address
+                </button>
+                <span id="numbercalls3"></span>
+                </p>
+
+                <p>
+          &nbsp;<button type = "button" class = "btn btn-primary btn-lg" onclick="myFunction4()">
+                Follow-up Call
+                </button>
+                <span id="numbercalls4"></span>
+                </p>
+
+                <p>
+          &nbsp;<button type = "button" class = "btn btn-primary btn-lg" onclick="myFunction5()">
+                You got rejected
+                </button>
+                <span id="numbercalls5"></span>
+                </p>
+
+                <p>
+          &nbsp;<button type = "button" class = "btn btn-primary btn-lg" onclick="myFunction6()">
+                You got a submission
+                </button>
+                <span id="numbercalls6"></span>
+                </p>
+
+                <p>
+          &nbsp;<button type = "button" class = "btn btn-primary btn-lg" onclick="myFunction7()">
+                You got a new agency appointment
+                </button>
+                <span id="numbercalls7"></span>
+                </p>
+            </div>
+            <br>
+
+            <hr>
+            <table style="width:100%">
+              <tr>
+                <td><button type="button" class="btn btn-success" onclick="check2()">Check My Calls</button></td>
+
+                <td><button type="button" class="btn btn-success" onclick= "reset2()">Reset Calls</button></td>
+              </tr>
+            </table>
+
+            <h3>Dear player: Every 60 points you earn a prize from your boss! Both your points (score) and number of calls are being
+              saved automatically. If you want to make them visible next time you return to the site, just press "Check Score" and
+              "Check my calls". If, for any reason, you need to modify your score, click "Enter Score" to enter
+              the new number manually. </h3>
+
+        <!-- the following is no longer jquery is just javascript: -->
+
+        <script>
+            var score = 0;
+            document.getElementById('score').innerHTML= score;
+            var words= ['Wicked', '¡Mostro, causa','¡Bravaso', 'blowza', 'Boom goes the dinamite','Hao lihai','¡Ta ótimo','¡Nossa que legal','¡Muito bacana', '¡Manya, qué macanudo','¡Pajita pulenta','Hao bang'];
+            var word= words[Math.floor(Math.random()*words.length)];
+
+            function myFunction1() {
+              if (localStorage.callcount1){
+                localStorage.callcount1= Number(localStorage.callcount1) + 1;
+              }else{
+                localStorage.callcount1 = 1;
+              }
+              document.getElementById('numbercalls1').innerHTML= localStorage.callcount1+ " call(s)";
+              alert("Yikes, 0 points.");
+            }
+            function myFunction2() {
+              score = score + 0.5;
+              document.getElementById('score').innerHTML= score;
+              if (typeof(Storage)!=="undefined"){
+                localStorage.savednumber=Number(score);
+              } else{
+                  document.getElementById('score').innerHTML= "Sorry, your browser does not support web storage";
+                }
+              if (score>59) {
+                alert(word + "! You've earned a free lunch! Take a screenshot and text it to your boss to redeem your prize. Don't forget to reset your score.");
+              }else{
+                alert("0.5 points, you can do better.");
+              }
+              if (localStorage.callcount2){
+                localStorage.callcount2= Number(localStorage.callcount2) + 1;
+              }else{
+                localStorage.callcount2 = 1;
+              }
+              document.getElementById('numbercalls2').innerHTML= localStorage.callcount2+ " call(s)";
+            }
+            function myFunction3() {
+              score = score + 1;
+              document.getElementById('score').innerHTML = score;
+              if (typeof(Storage)!=="undefined"){
+                localStorage.savednumber=Number(score);
+              } else{
+                  document.getElementById('score').innerHTML= "Sorry, your browser does not support web storage";
+                }
+              if (score>59) {
+                alert(word + "! You've earned a free lunch! Take a screenshot and text it to your boss to redeem your price. Don't forget to reset your score.");
+              }else{
+                alert("1 point, good hustle.");
+              }
+              if (localStorage.callcount3){
+                localStorage.callcount3= Number(localStorage.callcount3) + 1;
+              }else{
+                localStorage.callcount3 = 1;
+              }
+              document.getElementById('numbercalls3').innerHTML= localStorage.callcount3+ " call(s)";
+            }
+            function myFunction4() {
+              score= score + 1;
+              document.getElementById('score').innerHTML = score;
+              if (typeof(Storage)!=="undefined"){
+                localStorage.savednumber=Number(score);
+              } else{
+                  document.getElementById('score').innerHTML= "Sorry, your browser does not support web storage";
+                }
+              if (score>59) {
+                alert(word + "! You've earned a free lunch! Take a screenshot and text it to your boss to redeem your price. Don't forget to reset your score.");
+              }else{
+                alert("1 point, nice job bro!");
+              }
+              if (localStorage.callcount4){
+                localStorage.callcount4= Number(localStorage.callcount4) + 1;
+              }else{
+                localStorage.callcount4 = 1;
+              }
+              document.getElementById('numbercalls4').innerHTML= localStorage.callcount4+ " call(s)";
+            }
+            function myFunction5() {
+              score= score+ 2;
+              document.getElementById('score').innerHTML= score;
+              if (typeof(Storage)!=="undefined"){
+                localStorage.savednumber=Number(score);
+              } else{
+                  document.getElementById('score').innerHTML= "Sorry, your browser does not support web storage";
+                }
+              if (score>59) {
+                alert(word + "! You've earned a free lunch! Take a screenshot and text it to your boss to redeem your price. Don't forget to reset your score.");
+              }else{
+                alert("2 points! Now we're talking.");
+              }
+              if (localStorage.callcount5){
+                localStorage.callcount5= Number(localStorage.callcount5) + 1;
+              }else{
+                localStorage.callcount5 = 1;
+              }
+              document.getElementById('numbercalls5').innerHTML= localStorage.callcount5+ " call(s)";
+            }
+            function myFunction6() {
+              score= score+3;
+              document.getElementById('score').innerHTML= score;
+              if (typeof(Storage)!=="undefined"){
+                localStorage.savednumber=Number(score);
+              } else{
+                  document.getElementById('score').innerHTML= "Sorry, your browser does not support web storage";
+                }
+              if (score>59) {
+                alert(word + "! You've earned a free lunch! Take a screenshot and text it to your boss to redeem your price. Don't forget to reset your score.");
+              }else{
+                alert("3 points. Woohoo, do the Carlton Dance.");
+              }
+              if (localStorage.callcount6){
+                localStorage.callcount6= Number(localStorage.callcount6) + 1;
+              }else{
+                localStorage.callcount6 = 1;
+              }
+              document.getElementById('numbercalls6').innerHTML= localStorage.callcount6+ " call(s)";
+            }
+            function myFunction7() {
+              score= score+5;
+              document.getElementById('score').innerHTML= score;
+              if (typeof(Storage)!=="undefined"){
+                localStorage.savednumber=Number(score);
+              } else{
+                  document.getElementById('score').innerHTML= "Sorry, your browser does not support web storage";
+                }
+              if (score>59) {
+                alert(word + "! You've earned a free lunch! Take a screenshot and text it to your boss to redeem your prize. Don't forget to reset your score.");
+              }else{
+                alert("5 points.¡Aaaasuu, tranquilo pe choche!");
+              }
+              if (localStorage.callcount7){
+                localStorage.callcount7= Number(localStorage.callcount7) + 1;
+              }else{
+                localStorage.callcount7 = 1;
+              }
+              document.getElementById('numbercalls7').innerHTML= localStorage.callcount7+ " call(s)";
+            }
+            function previously() {
+              score= Number(localStorage.getItem("savednumber"));
+              if (score>=0.5){
+                document.getElementById('score').innerHTML = localStorage.savednumber;
+              }else {
+                document.getElementById('score').innerHTML = "You haven't acummulate it any points yet, hurry up!";
+              }
+            }
+            function enter() {
+              var newscore = prompt("Enter your new score","");
+              if (newscore != null){
+                document.getElementById('score').innerHTML= newscore;
+                score= parseFloat(newscore);
+              }
+            }
+            function reset() {
+              localStorage.removeItem("savednumber");
+              score= 0;
+              document.getElementById('score').innerHTML= score;
+            }
+            function check2() {
+              if (localStorage.callcount1>=1){
+                document.getElementById('numbercalls1').innerHTML= localStorage.callcount1+ " call(s)";
+              }else {
+                  document.getElementById('numbercalls1').innerHTML= "No calls";
+              }
+              if (localStorage.callcount2>=1){
+                document.getElementById('numbercalls2').innerHTML= localStorage.callcount2+ " call(s)";
+              }else {
+                  document.getElementById('numbercalls2').innerHTML= "No calls";
+              }
+              if (localStorage.callcount3>=1){
+                document.getElementById('numbercalls3').innerHTML= localStorage.callcount3+ " call(s)";
+              }else {
+                  document.getElementById('numbercalls3').innerHTML= "No calls";
+              }
+              if (localStorage.callcount4>=1){
+                document.getElementById('numbercalls4').innerHTML= localStorage.callcount4+ " call(s)";
+              }else {
+                  document.getElementById('numbercalls4').innerHTML= "No calls";
+              }
+              if (localStorage.callcount5>=1){
+                document.getElementById('numbercalls5').innerHTML= localStorage.callcount5+ " call(s)";
+              }else {
+                  document.getElementById('numbercalls5').innerHTML= "No calls";
+              }
+              if (localStorage.callcount6>=1){
+                document.getElementById('numbercalls6').innerHTML= localStorage.callcount6+ " call(s)";
+              }else {
+                  document.getElementById('numbercalls6').innerHTML= "No calls";
+              }if (localStorage.callcount7>=1){
+                document.getElementById('numbercalls7').innerHTML= localStorage.callcount7+ " call(s)";
+              }else {
+                  document.getElementById('numbercalls7').innerHTML= "No calls";
+              }
+            }
+            function reset2() {
+              localStorage.removeItem("callcount1");
+              localStorage.removeItem("callcount2");
+              localStorage.removeItem("callcount3");
+              localStorage.removeItem("callcount4");
+              localStorage.removeItem("callcount5");
+              localStorage.removeItem("callcount6");
+              localStorage.removeItem("callcount7");
+              document.getElementById('numbercalls1').innerHTML= "";
+              document.getElementById('numbercalls2').innerHTML= "";
+              document.getElementById('numbercalls3').innerHTML= "";
+              document.getElementById('numbercalls4').innerHTML= "";
+              document.getElementById('numbercalls5').innerHTML= "";
+              document.getElementById('numbercalls6').innerHTML= "";
+              document.getElementById('numbercalls7').innerHTML= "";
+            }
+
+        </script>
+
+    </body>
+</html>

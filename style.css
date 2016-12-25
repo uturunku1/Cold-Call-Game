@@ -1,0 +1,26 @@
+@media screen and (max-width:640px){
+      h1{
+          color: white;
+          }
+
+      h2{
+        color:white;
+      }
+
+  }
+
+h3 {
+  color: red;
+  text-shadow: 1px 1px black;
+  font-size: 21px;
+
+}
+span{
+  color: white;
+  text-shadow: 1px 1px black;
+  font-size: 25px;
+}
+
+td{
+  text-align: center;
+}
